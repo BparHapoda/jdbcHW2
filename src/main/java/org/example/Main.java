@@ -1,8 +1,7 @@
 package org.example;
 
-import org.example.dao.AbonentDaoImpl;
-import org.example.dao.LocationDaoImpl;
-import org.example.entity.Abonent;
+import org.example.services.AbonentDaoImpl;
+import org.example.services.LocationDaoImpl;
 import org.example.exceptions.DaoException;
 import org.example.utils.PrintQuery;
 

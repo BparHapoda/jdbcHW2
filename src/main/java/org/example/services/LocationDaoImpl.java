@@ -1,5 +1,6 @@
-package org.example.dao;
+package org.example.services;
 
+import org.example.dao.LocationDao;
 import org.example.entity.Location;
 import org.example.exceptions.DaoException;
 import org.example.utils.DataBaseConnection;
