@@ -1,18 +1,30 @@
-package org.example;
+package org.example.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class DataBaseConnection {
     static final String url = "jdbc:postgresql://localhost:5432/phonebook";
-    static final String login = "postgres";
-    static final String password = "12345";
+
+
+
 
     public static Connection getConnection() {
+        Properties properties=new Properties();
+        properties.put("escapeSyntaxCallMode","callIfNoRetuen");
+        properties.put("user","postgres");
+        properties.put("password","12345");
+        properties.put("autoReconnect","true");
+        properties.put("charackterEncoding","UTF-8");
+        properties.put("useUnicode","true");
+        properties.put("escapeSyntaxCallMode","callIfNoReturn");
+
+
         Connection connection = null;
         try {
-            connection = DriverManager.getConnection(url, login, password);
+            connection = DriverManager.getConnection(url, properties);
             if (connection != null) {
                 System.out.println("Connection ok");
             } else {

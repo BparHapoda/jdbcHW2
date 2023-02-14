@@ -1,7 +1,5 @@
 package org.example.entity;
 
-import org.example.Entity;
-
 public class Abonent extends Entity {
 
     private int id;

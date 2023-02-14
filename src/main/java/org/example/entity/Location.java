@@ -1,7 +1,5 @@
 package org.example.entity;
 
-import org.example.Entity;
-
 public class Location extends Entity {
     private int id;
     private String country;
