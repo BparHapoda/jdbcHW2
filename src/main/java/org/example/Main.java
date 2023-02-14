@@ -28,14 +28,4 @@ public class Main {
         PrintQuery.printQuery("SELECT * FROM abonents");
 
     }
-
-
-
-
-
-
-
-    public static void insertAbonent(String base,Abonent abonent){
-        String sql=String.format("INSERT INTO %s ",base);
-    }
 }
