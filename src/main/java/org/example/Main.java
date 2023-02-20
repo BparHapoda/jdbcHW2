@@ -14,52 +14,11 @@ public class Main {
     public static void main(String[] args) {
 
 
-        AbonentDaoImpl adi=new AbonentDaoImpl();
-        LocationDaoImpl ldi=new LocationDaoImpl();
-/*        try {
-            System.out.println(adi.findAll());
-        } catch (DaoException e) {
-            throw new RuntimeException(e);
-        }
-
-        LocationDaoImpl ldi=new LocationDaoImpl();
-        try {
-            System.out.println(ldi.findAll());
-        } catch (DaoException e) {
-            throw new RuntimeException(e);
-        }
-*/
-    /*
-        AbonentDaoImpl abonentDao=new AbonentDaoImpl();
-        try {
-            System.out.println(abonentDao.findById(1));
-        } catch (DaoException e) {
-            throw new RuntimeException(e);
-        }
-
-        LocationDaoImpl locationDao=new LocationDaoImpl();
-        try {
-            System.out.println(locationDao.findById(1));
-        } catch (DaoException e) {
-            throw new RuntimeException(e);
-        }
-
-        try {
-            System.out.println(abonentDao.save(new Abonent("Dima","Boronin","+79219671388")));
-        } catch (DaoException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            locationDao.save(new Location("Georgia","Batumi","Sherifa c street 49A"));
-        } catch (DaoException e) {
-            throw new RuntimeException(e);
-        }
-*/
 
         PrintQuery.printQuery("SELECT * FROM abonents");
       PrintQuery.printQuery("SELECT * FROM locations");
         try {
-            AbonentDaoImpl.getInstance().update(Abonent.getAbonent(16,"Hren","Hrenov","123456"));
+            AbonentDaoImpl.getInstance().update(Abonent.getAbonent(16,"Alexey","Navalny","123456"));
         } catch (DaoException e) {
             throw new RuntimeException(e);
         }
