@@ -4,13 +4,14 @@ import org.example.entity.Abonent;
 import org.example.entity.Entity;
 import org.example.exceptions.DaoException;
 
-import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public interface BaseDao <K,T extends Entity>{
+
     List <T> findAll() throws DaoException;
 
-    T findById (K id) throws DaoException, SQLException;
+    Optional<T> findById (K id) throws DaoException;
 
     void update (T entity) throws DaoException;
 

@@ -1,15 +1,17 @@
 package org.example.entity;
 
-public class Abonent extends Entity {
+import java.util.Objects;
 
-    private int id;
+public class Abonent extends Entity {
+private int id;
     private String name;
     private String surname;
 
     private String phone;
+public Abonent(){
 
-    public Abonent(int id, String name, String surname, String phone) {
-        this.id = id;
+}
+    public Abonent( String name, String surname, String phone) {
         this.name = name;
         this.surname = surname;
         this.phone = phone;
@@ -17,6 +19,18 @@ public class Abonent extends Entity {
 
     public int getId() {
         return id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Abonent abonent)) return false;
+        return id == abonent.id && Objects.equals(name, abonent.name) && Objects.equals(surname, abonent.surname) && Objects.equals(phone, abonent.phone);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, surname, phone);
     }
 
     public void setId(int id) {
@@ -45,10 +59,7 @@ public class Abonent extends Entity {
 
     @Override
     public String toString() {
-        return "Abonent{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
+        return "Abonent{'name='" + name + " , surname=" + surname + '\'' +
                 ", phone='" + phone + '\'' +
                 '}';
     }
@@ -56,4 +67,14 @@ public class Abonent extends Entity {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
+    public static Abonent getAbonent(int id,String name,String surname,String phone){
+        Abonent abonent=new Abonent();
+        abonent.setId(id);
+        abonent.setName(name);
+        abonent.setSurname(surname);
+        abonent.setPhone(phone);
+        return abonent;
+    }
 }
+

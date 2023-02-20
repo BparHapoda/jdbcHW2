@@ -13,7 +13,6 @@ public class DataBaseConnection {
 
     public static Connection getConnection() {
         Properties properties=new Properties();
-        properties.put("escapeSyntaxCallMode","callIfNoRetuen");
         properties.put("user","postgres");
         properties.put("password","12345");
         properties.put("autoReconnect","true");

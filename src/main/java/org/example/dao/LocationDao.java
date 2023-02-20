@@ -1,17 +1,16 @@
 package org.example.dao;
-
-import org.example.entity.Abonent;
 import org.example.entity.Location;
 import org.example.exceptions.DaoException;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface LocationDao extends BaseDao<Integer, Location> {
     @Override
     List<Location> findAll() throws DaoException;
 
     @Override
-    Location findById(Integer id) throws DaoException;
+    Optional<Location> findById(Integer id) throws DaoException;
 
     @Override
     void update(Location entity) throws DaoException;

@@ -3,7 +3,6 @@ package org.example.dao;
 import org.example.entity.Abonent;
 import org.example.exceptions.DaoException;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,7 +11,7 @@ public interface AbonentDao extends BaseDao<Integer, Abonent> {
     List<Abonent> findAll() throws DaoException;
 
     @Override
-    Abonent findById(Integer id) throws DaoException, SQLException;
+    Optional<Abonent> findById(Integer id) throws DaoException;
 
     @Override
     Abonent save(Abonent entity) throws DaoException;

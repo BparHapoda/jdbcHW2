@@ -6,10 +6,11 @@ public class Location extends Entity {
     private String city;
     private String address;
 
-    public Location(int id, String country, String city, String address) {
+    public Location(){}
+
+    public Location(String country, String city, String address) {
         this.country = country;
         this.city = city;
-        this.id = id;
         this.address = address;
     }
 
@@ -53,5 +54,14 @@ public class Location extends Entity {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public static Location getLocation(int id,String country,String city,String address){
+        Location location=new Location();
+        location.setId(id);
+        location.setCountry(country);
+        location.setCity(city);
+        location.setAddress(address);
+        return location;
     }
 }
